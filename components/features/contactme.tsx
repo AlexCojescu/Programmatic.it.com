@@ -17,8 +17,12 @@ import {
 import { z } from 'zod';
 import { formSchema } from "@/lib/schemas";
 import { send } from "@/lib/email";
+import { useState, useTransition } from "react";
 
 export default function ContactForm() {
+  const [isPending, startTransition] = useTransition();
+  const [submissionStatus, setSubmissionStatus] = useState<{ success: boolean; message: string } | null>(null);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -30,23 +34,17 @@ export default function ContactForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    try {
-      await send(values);
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to save to database');
+    setSubmissionStatus(null);
+    startTransition(async () => {
+      try {
+        await send(values);
+        setSubmissionStatus({ success: true, message: "Your message has been sent successfully!" });
+        form.reset(); 
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        setSubmissionStatus({ success: false, message: "Failed to send message. Please try again later." });
       }
-      console.log('Form submitted successfully');
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    }
+    });
   }
 
   return (
@@ -68,7 +66,7 @@ export default function ContactForm() {
                   <FormItem>
                     <FormLabel>First Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your first name" {...field} />
+                      <Input placeholder="Your first name" {...field} disabled={isPending} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -81,7 +79,7 @@ export default function ContactForm() {
                   <FormItem>
                     <FormLabel>Last Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your last name" {...field} />
+                      <Input placeholder="Your last name" {...field} disabled={isPending} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -95,7 +93,7 @@ export default function ContactForm() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your Email" {...field} />
+                      <Input placeholder="Your Email" {...field} disabled={isPending} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -112,15 +110,21 @@ export default function ContactForm() {
                         placeholder="Type your message here"
                         className="min-h-[120px]"
                         {...field}
+                        disabled={isPending}
                       />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
+               {submissionStatus && (
+                <div className={`text-sm ${submissionStatus.success ? 'text-green-600' : 'text-red-600'}`}>
+                  {submissionStatus.message}
+                </div>
+              )}
               <div className="flex justify-center">
-                <Button type="submit" className="w-1/3">
-                  Submit
+                <Button type="submit" className="w-1/3" disabled={isPending}>
+                  {isPending ? 'Submitting...' : 'Submit'}
                 </Button>
               </div>
             </form>
