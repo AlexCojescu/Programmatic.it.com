@@ -48,26 +48,30 @@ export default function ContactForm() {
   }
 
   return (
-    // I've adjusted the max-width to be smaller on mobile and larger on desktop.
-    <Card className="mx-auto w-full max-w-sm md:max-w-xl border-0 bg-white/90 backdrop-blur-sm md:border md:shadow-sm">
-      <CardHeader className="text-center">
-        <CardTitle className="text-3xl">Contact Us</CardTitle>
-        <CardDescription className="mx-auto">
+    <Card className="mx-auto w-full max-w-sm sm:max-w-md md:max-w-xl border-0 sm:border bg-white/95 sm:bg-white/90 backdrop-blur-sm shadow-none sm:shadow-sm">
+      <CardHeader className="text-center px-4 sm:px-6 py-4 sm:py-6">
+        <CardTitle className="text-2xl sm:text-3xl">Contact Us</CardTitle>
+        <CardDescription className="mx-auto text-sm sm:text-base">
           Fill out the form below and we&apos;ll get back to you as soon as possible.
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="px-4 sm:px-6 pb-6">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <div className="grid grid-cols-2 gap-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <FormField
                 control={form.control}
                 name="firstName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>First Name</FormLabel>
+                    <FormLabel className="text-sm font-medium">First Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your first name" {...field} disabled={isPending} />
+                      <Input 
+                        placeholder="Your first name" 
+                        {...field} 
+                        disabled={isPending}
+                        className="h-10 sm:h-11"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -78,9 +82,14 @@ export default function ContactForm() {
                 name="lastName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Last Name</FormLabel>
+                    <FormLabel className="text-sm font-medium">Last Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your last name" {...field} disabled={isPending} />
+                      <Input 
+                        placeholder="Your last name" 
+                        {...field} 
+                        disabled={isPending}
+                        className="h-10 sm:h-11"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -92,9 +101,14 @@ export default function ContactForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel className="text-sm font-medium">Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your Email" {...field} disabled={isPending} />
+                      <Input 
+                        placeholder="Your Email" 
+                        {...field} 
+                        disabled={isPending}
+                        className="h-10 sm:h-11"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -105,11 +119,11 @@ export default function ContactForm() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Message</FormLabel>
+                    <FormLabel className="text-sm font-medium">Message</FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder="Type your message here"
-                        className="min-h-[160px]"
+                        className="min-h-[120px] sm:min-h-[160px] resize-none"
                         {...field}
                         disabled={isPending}
                       />
@@ -119,12 +133,20 @@ export default function ContactForm() {
                 )}
               />
                {submissionStatus && (
-                <div className={`text-sm ${submissionStatus.success ? 'text-green-600' : 'text-red-600'}`}>
+                <div className={`text-sm p-3 rounded-md ${
+                  submissionStatus.success 
+                    ? 'text-green-700 bg-green-50 border border-green-200' 
+                    : 'text-red-700 bg-red-50 border border-red-200'
+                }`}>
                   {submissionStatus.message}
                 </div>
               )}
-              <div className="flex justify-center">
-                <Button type="submit" className="w-1/3" disabled={isPending}>
+              <div className="flex justify-center pt-2">
+                <Button 
+                  type="submit" 
+                  className="w-full sm:w-1/2 h-11 font-medium" 
+                  disabled={isPending}
+                >
                   {isPending ? 'Submitting...' : 'Submit'}
                 </Button>
               </div>
