@@ -2,7 +2,7 @@ import React from 'react';
 
 const QuoteSection = () => {
   return (
-    <section className="w-full py-12 sm:py-16 bg-gradient-to-br from-blue-50 to-blue-100">
+    <section className="w-full py-12 sm:py-16 bg-gradient-to-br from-blue-50 to-blue-100 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <figure className="max-w-4xl mx-auto">
           <blockquote className="relative pl-10 sm:pl-16">

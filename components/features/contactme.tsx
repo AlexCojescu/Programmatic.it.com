@@ -48,7 +48,7 @@ export default function ContactForm() {
   }
 
   return (
-    <Card className="mx-auto w-full max-w-sm sm:max-w-md md:max-w-xl border-0 sm:border bg-white/95 sm:bg-white/90 backdrop-blur-sm shadow-none sm:shadow-sm">
+    <Card className="mx-auto w-full max-w-sm sm:max-w-md md:max-w-xl border-0 sm:border bg-white/95 sm:bg-white/90 backdrop-blur-sm shadow-md sm:shadow-sm">
       <CardHeader className="text-center px-4 sm:px-6 py-4 sm:py-6">
         <CardTitle className="text-2xl sm:text-3xl">Contact Us</CardTitle>
         <CardDescription className="mx-auto text-sm sm:text-base">
