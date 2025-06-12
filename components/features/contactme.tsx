@@ -48,7 +48,8 @@ export default function ContactForm() {
   }
 
   return (
-    <Card className="mx-auto w-full max-w-xl border-0 bg-white/90 backdrop-blur-sm md:border md:shadow-sm">
+    // I've adjusted the max-width to be smaller on mobile and larger on desktop.
+    <Card className="mx-auto w-full max-w-sm md:max-w-xl border-0 bg-white/90 backdrop-blur-sm md:border md:shadow-sm">
       <CardHeader className="text-center">
         <CardTitle className="text-3xl">Contact Us</CardTitle>
         <CardDescription className="mx-auto">
@@ -106,7 +107,6 @@ export default function ContactForm() {
                   <FormItem>
                     <FormLabel>Message</FormLabel>
                     <FormControl>
-                      {/* I've made the text area taller. */}
                       <Textarea
                         placeholder="Type your message here"
                         className="min-h-[160px]"

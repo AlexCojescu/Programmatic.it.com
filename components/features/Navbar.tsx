@@ -1,6 +1,8 @@
 'use client';
 
+
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image'; // Add this import
 
 const Navbar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -34,13 +36,14 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
         {/* Logo - Increased the height from h-10 to h-14 */}
         <div className="flex items-center">
-          <img
-            src="/Logo1.png"
-            alt="Slute Logo"
-            width={130} // Adjusted width to maintain aspect ratio
-            height={78} // Adjusted height
-            className="h-12 w-auto hover:scale-105 transition-transform duration-300"
-          />
+        <Image
+  src="/Logo1.png"
+  alt="Slute Logo"
+  width={130}
+  height={78}
+  className="h-12 w-auto hover:scale-105 transition-transform duration-300"
+  priority // Optional: if this is above the fold
+/>
         </div>
 
         {/* Desktop Navigation - I've updated the text color to be dark. */}

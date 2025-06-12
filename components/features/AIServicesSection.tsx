@@ -2,7 +2,10 @@ import React from 'react';
 
 const AIServicesSection = () => {
   return (
-    <section className="max-w-4xl mx-auto px-4 py-16 mt-0 mb-18">
+    // I've adjusted the vertical padding (`pt-*`) to be responsive.
+    // `pt-8` sets a smaller top padding for mobile.
+    // `lg:pt-16` sets it back to the original, larger padding for desktop.
+    <section className="max-w-4xl mx-auto px-4 pt-0 pb-16 lg:pt-16">
       <div className="text-center mb-12">
         <h1 className="text-3xl font-bold text-gray-900 mb-4">AI & AUTOMATION SERVICES</h1>
         
