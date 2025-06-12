@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const HeroSection = () => {
+const Hero = () => {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen py-16 px-4 sm:px-6 lg:px-8 text-center bg-black-100 text-white-100">
       <div className="max-w-4xl mx-auto">
@@ -25,7 +25,7 @@ const HeroSection = () => {
         
         <div className="max-w-2xl mx-auto mb-12">
           <blockquote className="text-lg italic leading-relaxed text-white-200">
-            "Ricish helped me in developing a software that I needed for my server that discusses the stock market..."
+            &quot;Ricish helped me in developing a software that I needed for my server that discusses the stock market...&quot;
           </blockquote>
         </div>
         
@@ -43,4 +43,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default Hero;

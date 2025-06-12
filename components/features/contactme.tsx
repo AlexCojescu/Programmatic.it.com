@@ -50,11 +50,11 @@ export default function ContactForm() {
   }
 
   return (
-    <Card className="mx-auto w-full max-w-[500px]">{/* Fixed width of 800px */}
+    <Card className="mx-auto w-full max-w-[500px]">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl">Contact Us</CardTitle>
         <CardDescription className="mx-auto">
-          Fill out the form below and we'll get back to you as soon as possible.
+          Fill out the form below and we&apos;ll get back to you as soon as possible.
         </CardDescription>
       </CardHeader>
       <CardContent>

@@ -17,7 +17,7 @@ const AIServicesSection = () => {
         </p>
         
         <p className="text-gray-700">
-          MQLPlow's AI and automation solutions are built to maximise ROI—boosting productivity, increasing revenue per employee, and improving profit margins. We simplify AI adoption for small businesses, delivering clear, actionable strategies that add measurable value and keep you ahead of the competition.
+          MQLPlow&apos;s AI and automation solutions are built to maximise ROI—boosting productivity, increasing revenue per employee, and improving profit margins. We simplify AI adoption for small businesses, delivering clear, actionable strategies that add measurable value and keep you ahead of the competition.
         </p>
       </div>
       
@@ -31,7 +31,7 @@ const AIServicesSection = () => {
             Boost customer attraction and drive sales with targeted, automated marketing workflows.
           </p>
           <ul className="list-disc pl-5 space-y-2 text-gray-700">
-            <li>Design and build streamlined processes to increase your team's capacity</li>
+            <li>Design and build streamlined processes to increase your team&apos;s capacity</li>
             <li>Wages, Geralt into workflows to create, publish, and repurpose assets to anticipate</li>
             <li>Optimise campaign performance and improve personalisation to maximise ROI</li>
           </ul>
