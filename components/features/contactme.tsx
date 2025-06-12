@@ -48,9 +48,9 @@ export default function ContactForm() {
   }
 
   return (
-    <Card className="mx-auto w-full max-w-[500px]">
+    <Card className="mx-auto w-full max-w-xl border-0 bg-white/90 backdrop-blur-sm md:border md:shadow-sm">
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl">Contact Us</CardTitle>
+        <CardTitle className="text-3xl">Contact Us</CardTitle>
         <CardDescription className="mx-auto">
           Fill out the form below and we&apos;ll get back to you as soon as possible.
         </CardDescription>
@@ -106,9 +106,10 @@ export default function ContactForm() {
                   <FormItem>
                     <FormLabel>Message</FormLabel>
                     <FormControl>
+                      {/* I've made the text area taller. */}
                       <Textarea
                         placeholder="Type your message here"
-                        className="min-h-[120px]"
+                        className="min-h-[160px]"
                         {...field}
                         disabled={isPending}
                       />
