@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
   // ADDED: Open Graph tags for rich social media previews
   openGraph: {
-    title: "Programmatic | AI Solutions for Business Growth & Efficiency",
+    title: "Programmatic | AI Solutions for Business, Growth, & Efficiency",
     description: "Unlock exponential growth with Programmatic's AI-powered automation solutions.",
     url: 'https://www.programmatic.it.com', // <-- REPLACE WITH YOUR DOMAIN
     siteName: 'Programmatic',

@@ -99,35 +99,41 @@ export function VideoText({
 
   return (
     <Component className={cn(`relative size-full`, className)}>
-      {/* Create a container that masks the video to only show within text */}
-      <div
-        className="absolute inset-0 flex items-center justify-center"
-        style={{
-          maskImage: dataUrlMask,
-          WebkitMaskImage: dataUrlMask,
-          maskSize: "contain",
-          WebkitMaskSize: "contain",
-          maskRepeat: "no-repeat",
-          WebkitMaskRepeat: "no-repeat",
-          maskPosition: "center",
-          WebkitMaskPosition: "center",
-        }}
-      >
-        <video
-          className="w-full h-full object-cover"
-          autoPlay={autoPlay}
-          muted={muted}
-          loop={loop}
-          preload={preload}
-          playsInline
+      {/* This React Fragment (<>...</>) is the fix. 
+        It wraps the two children (div and span) into a single element,
+        satisfying TypeScript's requirement for the dynamic Component.
+      */}
+      <>
+        {/* Create a container that masks the video to only show within text */}
+        <div
+          className="absolute inset-0 flex items-center justify-center"
+          style={{
+            maskImage: dataUrlMask,
+            WebkitMaskImage: dataUrlMask,
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+            maskPosition: "center",
+            WebkitMaskPosition: "center",
+          }}
         >
-          <source src={src} />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+          <video
+            className="w-full h-full object-cover"
+            autoPlay={autoPlay}
+            muted={muted}
+            loop={loop}
+            preload={preload}
+            playsInline
+          >
+            <source src={src} />
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
-      {/* Add a backup text element for SEO/accessibility */}
-      <span className="sr-only">{content}</span>
+        {/* Add a backup text element for SEO/accessibility */}
+        <span className="sr-only">{content}</span>
+      </>
     </Component>
   );
 }
