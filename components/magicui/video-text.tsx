@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { ElementType, ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 
 export interface VideoTextProps {
   /**
@@ -57,11 +57,6 @@ export interface VideoTextProps {
    * @default "sans-serif"
    */
   fontFamily?: string;
-  /**
-   * The element type to render for the text
-   * @default "div"
-   */
-  as?: ElementType;
 }
 
 export function VideoText({
@@ -77,7 +72,6 @@ export function VideoText({
   textAnchor = "middle",
   dominantBaseline = "middle",
   fontFamily = "sans-serif",
-  as: Component = "div",
 }: VideoTextProps) {
   const [svgMask, setSvgMask] = useState("");
   const content = React.Children.toArray(children).join("");
@@ -97,43 +91,39 @@ export function VideoText({
 
   const dataUrlMask = `url("data:image/svg+xml,${encodeURIComponent(svgMask)}")`;
 
+  // FIX: Changed the dynamic <Component> to a standard <div> to resolve the build error.
+  // The 'as' prop has been removed as it was causing type conflicts in the Vercel build environment.
   return (
-    <Component className={cn(`relative size-full`, className)}>
-      {/* This React Fragment (<>...</>) is the fix. 
-        It wraps the two children (div and span) into a single element,
-        satisfying TypeScript's requirement for the dynamic Component.
-      */}
-      <>
-        {/* Create a container that masks the video to only show within text */}
-        <div
-          className="absolute inset-0 flex items-center justify-center"
-          style={{
-            maskImage: dataUrlMask,
-            WebkitMaskImage: dataUrlMask,
-            maskSize: "contain",
-            WebkitMaskSize: "contain",
-            maskRepeat: "no-repeat",
-            WebkitMaskRepeat: "no-repeat",
-            maskPosition: "center",
-            WebkitMaskPosition: "center",
-          }}
+    <div className={cn(`relative size-full`, className)}>
+      {/* Create a container that masks the video to only show within text */}
+      <div
+        className="absolute inset-0 flex items-center justify-center"
+        style={{
+          maskImage: dataUrlMask,
+          WebkitMaskImage: dataUrlMask,
+          maskSize: "contain",
+          WebkitMaskSize: "contain",
+          maskRepeat: "no-repeat",
+          WebkitMaskRepeat: "no-repeat",
+          maskPosition: "center",
+          WebkitMaskPosition: "center",
+        }}
+      >
+        <video
+          className="w-full h-full object-cover"
+          autoPlay={autoPlay}
+          muted={muted}
+          loop={loop}
+          preload={preload}
+          playsInline
         >
-          <video
-            className="w-full h-full object-cover"
-            autoPlay={autoPlay}
-            muted={muted}
-            loop={loop}
-            preload={preload}
-            playsInline
-          >
-            <source src={src} />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+          <source src={src} />
+          Your browser does not support the video tag.
+        </video>
+      </div>
 
-        {/* Add a backup text element for SEO/accessibility */}
-        <span className="sr-only">{content}</span>
-      </>
-    </Component>
+      {/* Add a backup text element for SEO/accessibility */}
+      <span className="sr-only">{content}</span>
+    </div>
   );
 }
