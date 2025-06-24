@@ -2,8 +2,8 @@ import React from 'react';
 
 const ContactHeader = () => {
   return (
-    // Increased vertical padding for more space above and below
-    <div className="py-24 sm:py-32">
+    // Added mt-32 and lg:mt-48 to create a large margin above the component
+    <div className="py-24 sm:py-18 mt-18 lg:mt-18">
       <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
         {/* Optional: A small badge for a modern UI touch */}
         <div className="mb-4">
