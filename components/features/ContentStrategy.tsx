@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import BunnyVideoPlayer from './BunnyVideoPlayer';
 
 // A reusable checkmark icon for the features list
@@ -20,9 +21,6 @@ const logos: string[] = [
 ];
 
 const ContentStrategy: React.FC = () => {
-  const videoLibraryId = '458960';
-  const videoId = '38690d4b-c314-4a2c-83e8-e85120f28712';
-
   return (
     <>
       <section className="bg-white py-16 lg:py-24 mt-24 sm:mt-24">
@@ -56,8 +54,8 @@ const ContentStrategy: React.FC = () => {
             
             {/* The Video Player - on the right */}
             <div className="md:order-2 flex justify-center">
-  <BunnyVideoPlayer className="w-full mx-auto rounded-2xl shadow-2xl overflow-hidden" />
-</div>
+              <BunnyVideoPlayer className="w-full mx-auto rounded-2xl shadow-2xl overflow-hidden" />
+            </div>
           </div>
 
           {/* Feature 2: Logos & Brand Identity (Centered) */}
@@ -83,9 +81,11 @@ const ContentStrategy: React.FC = () => {
           <div className="marquee-content flex space-x-12">
             {[...logos, ...logos].map((logoUrl, index) => (
               <div key={index} className="flex-shrink-0">
-                <img
+                <Image
                   src={logoUrl}
                   alt={`Logo ${index % logos.length + 1}`}
+                  width={200}
+                  height={100}
                   className="h-16 lg:h-20 w-auto object-contain"
                 />
               </div>

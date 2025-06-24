@@ -26,7 +26,7 @@ const ContactFooter = () => {
           
           <div className="mt-8 flex justify-center">
             <a
-              href="https://www.linkedin.com/in/your-profile-url" // <-- IMPORTANT: Change this URL
+              href="https://www.linkedin.com/in/alexandrucojescu/" // <-- IMPORTANT: Change this URL
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
