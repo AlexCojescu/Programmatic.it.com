@@ -18,7 +18,7 @@ const PricingSection = () => {
               Custom Solutions to Grow Your Business
             </h2>
             <p className="text-lg sm:text-xl text-gray-600">
-              Let's work together to build the perfect AI-powered solution for your needs.
+              Let&apos;s work together to build the perfect AI-powered solution for your needs.
             </p>
           </div>
 
@@ -26,7 +26,7 @@ const PricingSection = () => {
           <div className="max-w-3xl mx-auto bg-blue-50 border-2 border-blue-200 rounded-xl p-6 text-center mb-12 sm:mb-16">
             <h3 className="text-2xl font-bold text-gray-900 mb-2">Now Accepting New Portfolio Clients!</h3>
             <p className="text-gray-700">
-              As I build my portfolio, I'm offering my first few clients foundational pricing. This is a unique opportunity to get dedicated service and cutting-edge solutions at an exceptional value. Let's connect!
+              As I build my portfolio, I&apos;m offering my first few clients foundational pricing. This is a unique opportunity to get dedicated service and cutting-edge solutions at an exceptional value. Let&apos;s connect!
             </p>
           </div>
 

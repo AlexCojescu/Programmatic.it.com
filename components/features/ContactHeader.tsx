@@ -8,7 +8,7 @@ const ContactHeader = () => {
         {/* Optional: A small badge for a modern UI touch */}
         <div className="mb-4">
             <span className="inline-block rounded-full bg-blue-100 px-4 py-1.5 text-sm font-semibold text-blue-700">
-                Let's Connect
+                Let&apos;s Connect
             </span>
         </div>
         
@@ -19,8 +19,8 @@ const ContactHeader = () => {
         
         {/* Updated paragraph with slightly larger text and more top margin */}
         <p className="mt-8 text-xl sm:text-2xl leading-8 text-gray-700">
-          Have a project in mind or just want to ask a question? I'm here to help.
-          Schedule a free discovery call below or send a message, and I'll get back to you shortly.
+          Have a project in mind or just want to ask a question? I&apos;m here to help.
+          Schedule a free discovery call below or send a message, and I&apos;ll get back to you shortly.
         </p>
       </div>
     </div>
