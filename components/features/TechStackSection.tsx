@@ -16,7 +16,7 @@ const techLogos = [
   },
   {
     name: 'Apollo.io',
-    src: '/apollo.png',
+    src: '/Apollo.png',
   },
   {
     name: 'Instantly.ai',

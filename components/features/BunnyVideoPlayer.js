@@ -10,13 +10,11 @@ const BunnyVideoPlayer = ({
   autoPlay = true,
   muted = true,
   loop = true,
+  videoLibraryId = '458960',
+  videoId = '38690d4b-c314-4a2c-83e8-e85120f28712',
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(null);
-
-  // Your specific video details
-  const videoLibraryId = '458960';
-  const videoId = '38690d4b-c314-4a2c-83e8-e85120f28712';
 
   // Fixed URL with proper parameters for portrait 1080p video
   const videoUrl = `https://iframe.mediadelivery.net/embed/${videoLibraryId}/${videoId}?autoplay=${autoPlay ? 'true' : 'false'}&muted=${muted ? 'true' : 'false'}&loop=${loop ? 'true' : 'false'}&controls=${controls ? 'true' : 'false'}&responsive=true&t=0&volume=100&color=FFFFFF&primaryColor=FFFFFF&dnt=true`;
@@ -55,7 +53,7 @@ const BunnyVideoPlayer = ({
   }
 
   return (
-    <div className={`relative ${className} transform transition-all duration-200 ease-out hover:scale-105 hover:-translate-y-1 shadow-2xl hover:shadow-3xl`} style={{ 
+    <div className={`relative ${className} transform transition-all duration-300 ease-in-out hover:scale-110 shadow-2xl hover:shadow-3xl`} style={{ 
       width: '100%',
       maxWidth: '450px', // Much larger container
       aspectRatio: aspectRatio === '9:16' ? '9/16' : '16/9'
@@ -96,6 +94,8 @@ BunnyVideoPlayer.propTypes = {
   autoPlay: PropTypes.bool,
   muted: PropTypes.bool,
   loop: PropTypes.bool,
+  videoLibraryId: PropTypes.string,
+  videoId: PropTypes.string,
 };
 
 BunnyVideoPlayer.defaultProps = {
@@ -105,6 +105,8 @@ BunnyVideoPlayer.defaultProps = {
   autoPlay: true,
   muted: true,
   loop: true,
+  videoLibraryId: '458960',
+  videoId: '38690d4b-c314-4a2c-83e8-e85120f28712',
 };
 
 export default BunnyVideoPlayer;

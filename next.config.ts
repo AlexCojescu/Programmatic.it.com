@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   webpack: (config) => {
-    config.resolve.fallback = { 
+    config.resolve.fallback = {
       fs: false,
       path: false,
       buffer: false,
@@ -36,8 +36,8 @@ const nextConfig: NextConfig = {
       'images.unsplash.com',
       'placehold.co',
       'iframe.mediadelivery.net',
-      'assets.calendly.com', // Add Calendly assets domain
-      'calendly.com' // Add Calendly main domain
+      'assets.calendly.com',
+      'calendly.com'
     ],
   },
   async headers() {
@@ -54,7 +54,7 @@ const nextConfig: NextConfig = {
               "img-src 'self' data: https: placehold.co iframe.mediadelivery.net assets.calendly.com calendly.com",
               "media-src 'self' blob: data: iframe.mediadelivery.net",
               "connect-src 'self' https://calendly.com https://assets.calendly.com iframe.mediadelivery.net",
-              "frame-src https://calendly.com https://assets.calendly.com"
+              "frame-src https://calendly.com https://assets.calendly.com https://iframe.mediadelivery.net https://*.mediadelivery.net"
             ].join('; ')
           },
           {
