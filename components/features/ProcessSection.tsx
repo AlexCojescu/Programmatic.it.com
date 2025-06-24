@@ -32,10 +32,13 @@ const ProcessSection = () => {
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-50 flex items-center justify-center mb-3 sm:mb-0 sm:mr-5 shrink-0">
                 <span className="text-blue-600 font-medium text-lg sm:text-xl">1</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-medium text-gray-900">Subscribe</h3>
+              <h3 className="text-xl sm:text-2xl font-medium text-gray-900">Identify Your Target
+</h3>
             </div>
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-              Select your plan and gain instant access to our automation platform with dedicated support channels.
+              
+
+            Choose your objective: build a foundational asset like a new website, deploy intelligent AI automations, or pinpoint active buyers with our search intent engine. Each path is direct and decisive.
             </p>
           </div>
 
@@ -45,11 +48,10 @@ const ProcessSection = () => {
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-50 flex items-center justify-center mb-3 sm:mb-0 sm:mr-5 shrink-0">
                 <span className="text-green-600 font-medium text-lg sm:text-xl">2</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-medium text-gray-900">Request</h3>
+              <h3 className="text-xl sm:text-2xl font-medium text-gray-900">Deploy Your Solution</h3>
             </div>
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-              Submit automation tasks through our intuitive dashboard with clear specifications and priority settings.
-            </p>
+            Submit your parameters. We build the asset or launch the search. You maintain full visibility as we execute with precision. No ambiguity, only progress.            </p>
           </div>
 
           {/* Step 3 - Refine */}
@@ -58,11 +60,10 @@ const ProcessSection = () => {
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-red-50 flex items-center justify-center mb-3 sm:mb-0 sm:mr-5 shrink-0">
                 <span className="text-red-600 font-medium text-lg sm:text-xl">3</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-medium text-gray-900">Refine</h3>
+              <h3 className="text-xl sm:text-2xl font-medium text-gray-900">Receive Your Asset</h3>
             </div>
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-              Collaborate with our team to perfect each automation until it meets your exact requirements.
-            </p>
+            We deliver the finished product: your new website, your automation, or your list of in-market buyers. The asset is now yours to leverage. We remain ready to refine and redeploy.          </p>
           </div>
         </div>
 
