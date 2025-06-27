@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/features/Footer";
+import AvailabilityToast from "@/components/features/AvailibilityToast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,6 +56,7 @@ export default function RootLayout({
         <div className="min-h-screen flex flex-col">
           <main className="flex-13">
             {children}
+            <AvailabilityToast />
           </main>
           <Footer />
         </div>
