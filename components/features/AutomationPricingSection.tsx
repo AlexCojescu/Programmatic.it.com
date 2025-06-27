@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const AutomationPricingSection = () => {
   // A reusable checkmark icon
@@ -23,12 +24,30 @@ const AutomationPricingSection = () => {
             </p>
           </div>
 
-          {/* Updated Tool Logos Section with larger size and prominent drop shadow */}
+          {/* Updated Tool Logos Section with Next.js Image Component */}
           <div className="flex justify-center items-center space-x-8 md:space-x-12 mb-8 lg:mb-10">
             <p className="text-base font-semibold text-gray-500 uppercase tracking-wider">Powered By</p>
-            <img src="/make.png" alt="Make.com Logo" className="h-16 drop-shadow-lg" />
-            <img src="/zapier.png" alt="Zapier Logo" className="h-16 drop-shadow-lg" />
-            <img src="/n8n.png" alt="n8n Logo" className="h-16 drop-shadow-lg" />
+            <Image 
+              src="/make.png" 
+              alt="Make.com Logo" 
+              width={64} 
+              height={64} 
+              className="drop-shadow-lg object-contain" 
+            />
+            <Image 
+              src="/zapier.png" 
+              alt="Zapier Logo" 
+              width={150} 
+              height={64} 
+              className="drop-shadow-lg object-contain" 
+            />
+            <Image 
+              src="/n8n.png" 
+              alt="n8n Logo" 
+              width={64} 
+              height={64} 
+              className="drop-shadow-lg object-contain" 
+            />
           </div>
 
           {/* Tiered Pricing Structure */}
