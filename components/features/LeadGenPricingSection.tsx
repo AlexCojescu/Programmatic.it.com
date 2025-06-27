@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const LeadGenPricingSection = () => {
   // A reusable checkmark icon
@@ -23,13 +24,37 @@ const LeadGenPricingSection = () => {
             </p>
           </div>
 
-          {/* Updated Tool Logos Section */}
+          {/* Updated Tool Logos Section with Next.js Image Component */}
           <div className="flex justify-center items-center space-x-6 sm:space-x-8 mb-12 lg:mb-16 flex-wrap">
             <p className="w-full text-center text-base font-semibold text-gray-500 uppercase tracking-wider mb-4 sm:w-auto sm:mb-0">Our Tech Stack</p>
-            <img src="/Apollo.png" alt="Apollo.io Logo" className="h-20 drop-shadow-lg" />
-            <img src="/instantly.jpg" alt="Instantly.ai Logo" className="h-16 " />
-            <img src="/apify.png" alt="Apify Logo" className="h-16 " />
-            <img src="/zerobounce.png" alt="ZeroBounce Logo" className="h-16 drop-shadow-lg" />
+            <Image 
+              src="/Apollo.png" 
+              alt="Apollo.io Logo" 
+              width={180} 
+              height={60} 
+              className="drop-shadow-lg object-contain"
+            />
+            <Image 
+              src="/instantly.jpg" 
+              alt="Instantly.ai Logo" 
+              width={150} 
+              height={50}
+              className="object-contain" 
+            />
+            <Image 
+              src="/apify.png" 
+              alt="Apify Logo" 
+              width={120} 
+              height={50}
+              className="object-contain"
+            />
+            <Image 
+              src="/zerobounce.png" 
+              alt="ZeroBounce Logo" 
+              width={180} 
+              height={50}
+              className="drop-shadow-lg object-contain" 
+            />
           </div>
 
           {/* Tiered Pricing Structure */}

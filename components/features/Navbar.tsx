@@ -96,7 +96,7 @@ const Navbar = () => {
 
         {/* --- DESKTOP NAVIGATION (UNCHANGED) --- */}
         <div className="hidden md:flex items-center space-x-6">
-          <a href="#services" className="text-gray-800 hover:text-purple-600 transition-colors duration-200 cursor-pointer relative group font-medium">
+          <a href="/services" className="text-gray-800 hover:text-purple-600 transition-colors duration-200 cursor-pointer relative group font-medium">
             Work
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
           </a>
