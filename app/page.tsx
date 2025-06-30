@@ -2,7 +2,6 @@ import AIServicesSection from "@/components/features/AIServicesSection";
 import ContactForm from "@/components/features/contactme";
 import Navbar from "@/components/features/Navbar";
 import PartnerSection from "@/components/features/PartnerSection";
-import PricingSection from "@/components/features/PricingSection";
 import ProcessSection from "@/components/features/ProcessSection";
 import QuoteSection from "@/components/features/QuoteSection";
 import { Separator } from "@/components/features/Seperator";
@@ -50,10 +49,8 @@ export default function Page() {
         </div>
         <Separator />
         <PartnerSection />
-        <Separator />
-        <div id="pricing">
-          <PricingSection />
-        </div>
+
+       
 
         <Separator />
 

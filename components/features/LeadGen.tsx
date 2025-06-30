@@ -38,7 +38,7 @@ const LeadGen = () => {
         {/* Main Heading and Subheading */}
         <div className="max-w-4xl mx-auto text-center mb-16 lg:mb-20">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Engage In-Market Buyers, Not Passive Prospects
+            Search Intent Lead Generation
           </h2>
           <p className="text-lg lg:text-xl text-gray-600">
             Stop wasting time on generic outreach and manual research. We deliver a steady stream of high-intent leads, complete with personalized icebreakers, so you can focus on one thing: closing deals.

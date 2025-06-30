@@ -1,4 +1,8 @@
+'use client';
+
 import React from 'react';
+// Import motion and Variants for animations
+import { motion, type Variants } from 'framer-motion';
 
 // --- Reusable SVG Icons for the feature columns ---
 
@@ -28,26 +32,64 @@ const DevicesIcon = () => (
   </div>
 );
 
+// --- Animation Variants ---
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2, // Time delay between each child animating in
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: 'easeOut',
+    },
+  },
+};
+
+
 const WebDev = () => {
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-24 mt-12 sm:mt-16 lg:mt-24">
+    // MODIFIED: The main section is now a motion component
+    <motion.section 
+      className="bg-white py-12 sm:py-16 lg:py-24 mt-12 sm:mt-16 lg:mt-24"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
         
         {/* Main Heading and Subheading */}
-        <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-12 lg:mb-16 xl:mb-20">
+        <motion.div 
+          className="max-w-4xl mx-auto text-center mb-10 sm:mb-12 lg:mb-16 xl:mb-20"
+          variants={itemVariants}
+        >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
-            Digital Presence & Architecture
+            Web Design + Development 
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 px-2 sm:px-0 leading-relaxed">
             Construct your core digital asset with logic and purpose. We engineer a website that serves as a stable, scalable foundation for all commercial activity.
           </p>
-        </div>
+        </motion.div>
 
         {/* 3-Column Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16">
+        {/* MODIFIED: This grid now staggers its children */}
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16"
+          variants={containerVariants}
+        >
           
           {/* Column 1: Core Asset Construction */}
-          <div className="text-center px-2 sm:px-0">
+          <motion.div className="text-center px-2 sm:px-0" variants={itemVariants}>
             <div className="flex justify-center">
               <BlueprintIcon />
             </div>
@@ -57,10 +99,10 @@ const WebDev = () => {
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
               We don&apos;t just build websites; we engineer your central digital asset. It&apos;s the stable, reliable core from which all marketing and sales activities will operate.
             </p>
-          </div>
+          </motion.div>
 
           {/* Column 2: Scalable Foundation */}
-          <div className="text-center px-2 sm:px-0">
+          <motion.div className="text-center px-2 sm:px-0" variants={itemVariants}>
             <div className="flex justify-center">
               <ScaleIcon />
             </div>
@@ -70,10 +112,10 @@ const WebDev = () => {
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
               Your business will grow, and your website should grow with it. We build on a flexible foundation that handles increased traffic and new features without a complete rebuild.
             </p>
-          </div>
+          </motion.div>
 
           {/* Column 3: Flawless On Every Device */}
-          <div className="text-center px-2 sm:px-0">
+          <motion.div className="text-center px-2 sm:px-0" variants={itemVariants}>
             <div className="flex justify-center">
               <DevicesIcon />
             </div>
@@ -83,11 +125,11 @@ const WebDev = () => {
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
               A seamless experience is non-negotiable. Your platform will be fully responsive, providing a perfect, intuitive user experience on desktops, tablets, and smartphones alike.
             </p>
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
