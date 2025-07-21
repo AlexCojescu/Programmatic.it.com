@@ -35,7 +35,7 @@ export default function Page() {
 
       {/* --- Hero Section --- */}
       <motion.header 
-        className="bg-gray-50/50"
+        className="bg-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -99,7 +99,7 @@ export default function Page() {
         </section>
 
         {/* --- Core Philosophy Section --- */}
-        <section className="py-20 sm:py-24 bg-gray-50/70">
+        <section className="py-20 sm:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Our Guiding Principles</h2>

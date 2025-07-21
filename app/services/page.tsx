@@ -9,7 +9,6 @@ import Navbar from "@/components/features/Navbar";
 import LeadGen from "@/components/features/LeadGen";
 import TechStackSection from "@/components/features/TechStackSection";
 import AutomationSection from "@/components/features/AutomationSection";
-import ContentStrategy from "@/components/features/ContentStrategy";
 import WebDev from "@/components/features/WebDev";
 import ServicesHeader from '@/components/features/ServicesHeader';
 
@@ -76,7 +75,7 @@ export default function Page() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            <ContentStrategy />
+
           </motion.section>
 
      
