@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useMemo } from 'react'; // Import useMemo
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import Image from 'next/image';
 import { motion, useInView, useAnimation, Variants } from 'framer-motion';
 
@@ -14,31 +14,29 @@ interface CalmImageProps {
 }
 
 const CalmImageSection: React.FC<CalmImageProps> = ({
-    src,
-    alt,
-    width = 1200,  // Increased from 800
-    height = 900,  // Increased from 600
-    priority = false,
-    className = ''
-  }) => {
-  
+  src,
+  alt,
+  width = 1200,
+  height = 900,
+  priority = false,
+  className = ''
+}) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentEffect, setCurrentEffect] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: false, margin: '-10%' });
   const controls = useAnimation();
 
-  // Memoize the effects array so its reference doesn't change on every render
-  const effects = useMemo(() => ['breathe', 'float', 'glow', 'pulse'], []); // <--- Use useMemo here
+  // ✅ FIXED: Memoize the effects array so its reference doesn't change on every render
+  const effects = useMemo(() => ['breathe', 'float', 'glow', 'pulse'], []);
 
   useEffect(() => {
-    // This effect uses 'effects.length'
     const effectCycle = setInterval(() => {
       setCurrentEffect((prev) => (prev + 1) % effects.length);
     }, 8000);
 
     return () => clearInterval(effectCycle);
-  }, [effects]); // 'effects' is now a stable reference
+  }, [effects]); // ✅ Now effects is a stable reference
 
   useEffect(() => {
     if (isInView) {
