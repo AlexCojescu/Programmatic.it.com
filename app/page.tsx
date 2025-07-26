@@ -1,31 +1,31 @@
-import AIServicesSection from "@/components/features/AIServicesSection";
-import ContactForm from "@/components/features/contactme";
+import CalendlyWidget from "@/components/features/CalendlyWidget";
+
+import HeroSection from "@/components/features/HeroSection";
 import Navbar from "@/components/features/Navbar";
 import PartnerSection from "@/components/features/PartnerSection";
 import ProcessSection from "@/components/features/ProcessSection";
 import QuoteSection from "@/components/features/QuoteSection";
+import SCS02 from "@/components/features/SCS02";
+import SCS03 from "@/components/features/SCS03";
 import { Separator } from "@/components/features/Seperator";
-import CalendlyWidget from "@/components/features/CalendlyWidget";
-import HeroSection from "@/components/features/HeroSection";
-import { TypingAnimation } from "@/components/magicui/typing-animation"; // Assuming this is the correct path
+import { TypingAnimation } from "@/components/magicui/typing-animation";
+import SCS01 from "@/components/features/SCS01";
+import SCS04 from "@/components/features/SCS04";
+import Contactme from "@/components/features/contactme";
+import CalmImageSection from "@/components/features/CalmImageSection";
 
 export default function Page() {
   return (
     <div className="w-full">
       <Navbar />
-
       <HeroSection />
-
+      
       {/* Main content container that scrolls OVER the hero */}
       <div className="relative z-10 bg-white">
-        {/*
-          This grid container is now responsible for its own background.
-        */}
+        {/* Original grid container */}
         <div className="relative grid lg:grid-cols-2 gap-0 min-h-screen overflow-hidden">
-          {/* The gradient is now INSIDE and scoped only to this grid */}
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,_white_0%,_white_40%,_#EFF6FF_60%,_#DBEAFE_100%)]" />
 
-          {/* Grid Content */}
           <div className="flex items-center justify-center p-4 lg:p-8">
             <div className="w-full max-w-4xl lg:-mr-20">
               <ProcessSection />
@@ -34,41 +34,69 @@ export default function Page() {
           <div
             id="contact-me"
             className="flex items-center justify-center p-4 lg:p-8"
-          >
+          > 
             <div className="w-full max-w-xl lg:-ml-20">
-              <ContactForm />
+            <CalmImageSection
+  src="/HeaderImage.png"
+  alt="Your image description"
+  width={1400}
+  height={1050}
+  priority={true}
+  className="my-8"
+/>
+
             </div>
           </div>
         </div>
 
-        {/* These sections are now siblings to the grid container above. */}
+        {/* SCS Sections */}
         <QuoteSection />
-        <div className="py-8" />
-        <div id="services">
-          <AIServicesSection />
-        </div>
+        <div className="py-6" />
+
+        <SCS01 />
+        
+        <SCS02 />
+       
+        <SCS03 />
+        
+        <SCS04 />
+
         <Separator />
         <PartnerSection />
-
-       
-
         <Separator />
 
-        {/* --- CONTAINER FOR CENTERING HEADING AND WIDGET --- */}
-        <div className="flex flex-col items-center gap-8 py-12 px-4">
-          <TypingAnimation
-            as="h2"
-            className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl text-center"
-            startOnView={true} // Animation starts when visible
-            delay={200} // A slight delay before starting
-            duration={50} // Speed of typing in ms
-          >
-            Book Your Free Consultation
-          </TypingAnimation>
+        {/* OPTIMIZED CONTACT SECTION */}
+        <div className="bg-white py-16 px-4">
+          <div className="max-w-7xl mx-auto">
+            {/* Centered Title */}
+            <div className="text-center mb-12">
+              <TypingAnimation
+                as="h2"
+                className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl"
+                startOnView={true}
+                delay={200}
+                duration={50}
+              >
+                Book Your Free Consultation
+              </TypingAnimation>
+            </div>
 
-          {/* Calendly Widget is now wrapped to control its width independently */}
-          <div className="w-full max-w-5xl">
-             <CalendlyWidget />
+            {/* Flexible Layout for Contact and Calendly */}
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {/* Calendly Widget Container */}
+              <div className="w-full">
+                <div className="max-w-xl mx-auto">
+                  <CalendlyWidget />
+                </div>
+              </div>
+
+              {/* Contact Me Container */}
+              <div className="w-full">
+                <div className="max-w-xl mx-auto">
+                  <Contactme />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ const PartnerSection = () => {
             <div className="flex justify-center md:hidden mb-6 sm:mb-8">
               <div className="relative w-48 h-48 sm:w-64 sm:h-64">
                 <Image
-                  src="/programmatic-social-card.png"
+                  src="/Creator.png"
                   alt="A portrait of Alex"
                   width={400}
                   height={400}
@@ -76,7 +76,7 @@ const PartnerSection = () => {
           <div className="hidden md:flex justify-end items-center w-full h-full min-h-[400px] lg:min-h-[500px]">
             <div className="relative w-80 h-80 lg:w-96 lg:h-96">
               <Image
-                src="/programmatic-social-card.png"
+                src="/Creator.png"
                 alt="A portrait of Alex"
                 width={400}
                 height={400}
