@@ -1,8 +1,6 @@
 
 import Navbar from "@/components/features/Navbar";
 
-import ContentStrategy from "@/components/features/ContentStrategy";
-
 
 export default function Page() {
   return (
@@ -11,7 +9,7 @@ export default function Page() {
       
       <Navbar />
       
-      <ContentStrategy />
+ 
       
       </>
      
